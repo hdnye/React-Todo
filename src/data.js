@@ -21,17 +21,17 @@ export const todo = [
 },
 {
     name: 'Destroy the Patriarchy',
-    id: 4,
-    completed: false
-},
-{
-    name: 'Bank',
     id: 5,
     completed: false
 },
 {
-    name: 'Plan To Take Over The World',
+    name: 'Bank',
     id: 6,
+    completed: false
+},
+{
+    name: 'Plan To Take Over The World',
+    id: 7,
     completed: false
 }
 ];
