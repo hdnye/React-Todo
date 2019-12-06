@@ -1,7 +1,9 @@
 .App {
+    padding: 2rem 0;
     display: flex;
-    justify-content: center;
+    justify-content: center;     
 }
 .todo .todocompleted {
+    
     text-decoration: line-through;
 }

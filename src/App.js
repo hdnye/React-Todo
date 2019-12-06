@@ -3,6 +3,8 @@ import { todo } from './data';
 import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
 
+import { Button } from 'reactstrap';
+
 class App extends React.Component {
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
@@ -40,7 +42,7 @@ class App extends React.Component {
     });
   };
 
-   todoDone = event => {
+   todoDone = () => {
        this.setState({
          todo: this.state.todo.filter(item => !item.completed)
         });
@@ -52,21 +54,29 @@ class App extends React.Component {
       <div className='App'>
         <div className='header'>          
           <h2>Welcome to your Todo App!</h2>
-            <div>
-             <TodoList todo={this.state.todo}
-              toggleItem={this.toggleItem}
-             />
-            </div>
-            <div>
-              <TodoForm 
-                addTodo={this.addTodo}
+           <br></br>
+              <div>
+                <TodoList todo={this.state.todo}
+                toggleItem={this.toggleItem}
                 todoDone={this.todoDone}
-              />
+                />
+                </div>
+                
+                <div>
+                  <TodoForm 
+                    addTodo={this.addTodo}
+                  />
+                  </div>
+                <br></br>
+              
+                <Button 
+                  type='reset' 
+                  color='secondary' 
+                  onClick={this.todoDone}>Clear Completed
+                </Button>    
             </div>
-           <button type='reset' onClick={this.todoDone}>Clear Completed</button>
         </div>
-      </div>
-    );
+     );
   }
 }
 

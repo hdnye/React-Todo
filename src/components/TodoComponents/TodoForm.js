@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Container, Row, Col, Button } from 'reactstrap';
 
 class TodoForm extends React.Component {
     constructor(props) {
@@ -19,20 +19,27 @@ class TodoForm extends React.Component {
        this.setState({ itemTodo: '' });
     }
 
-
 render() {
     return (
-        <form onSubmit={this.submitHandler}>
-           <label htmlFor='item'>New Todo</label><br></br>
-            <input
-            type='text'
-            name='item'
-            value={this.state.itemTodo}
-            onChange={this.changeHandler}
-            />
-         <button type='submit'>Add</button><br></br>
-        </form>
-    );
+     <Container>
+       <Row>
+         <Col xs='auto'>
+           <form onSubmit={this.submitHandler}>
+             <label htmlFor='item'></label><br></br>
+              <input
+                 type='text'
+                 name='item'
+                 placeholder='Add New'
+                 value={this.state.itemTodo}
+                 onChange={this.changeHandler}
+                 /><br></br>
+               <Button type='submit' color='secondary'>Submit
+              </Button><br></br>
+            </form>
+          </Col>
+        </Row>
+       </Container> 
+     );
   } 
 };
 
