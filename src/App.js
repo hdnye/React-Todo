@@ -40,6 +40,8 @@ class App extends React.Component {
       todo: [...this.state.todo, newTodo]
     });
   };
+
+  
   
 
 
@@ -47,17 +49,20 @@ class App extends React.Component {
     console.log(this.state.todo);
     return (
       <div className='App'>
-        <div className='header'>
+        <div className='header'>          
           <h2>Welcome to your Todo App!</h2>
-            <TodoForm 
-              addTodo={this.addTodo}
-            />
-           </div>
-            <TodoList todo={this.state.todo}
-             toggleItem={this.toggleItem}
-            />
+            <div>
+             <TodoList todo={this.state.todo}
+              toggleItem={this.toggleItem}
+             />
+            </div>
+            <div>
+              <TodoForm 
+                addTodo={this.addTodo}
+              />
+            </div>
         </div>
-     
+      </div>
     );
   }
 }
