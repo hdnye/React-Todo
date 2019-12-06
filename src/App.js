@@ -28,7 +28,6 @@ class App extends React.Component {
     });
   };  
 
-
   
   addTodo = itemTodo => {
     const newTodo = {
@@ -41,12 +40,14 @@ class App extends React.Component {
     });
   };
 
-  
-  
-
+   todoDone = event => {
+       this.setState({
+         todo: this.state.todo.filter(item => !item.completed)
+        });
+     }
+   
 
   render() {
-    console.log(this.state.todo);
     return (
       <div className='App'>
         <div className='header'>          
@@ -59,8 +60,10 @@ class App extends React.Component {
             <div>
               <TodoForm 
                 addTodo={this.addTodo}
+                todoDone={this.todoDone}
               />
             </div>
+           <button type='reset' onClick={this.todoDone}>Clear Completed</button>
         </div>
       </div>
     );
