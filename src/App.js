@@ -16,17 +16,20 @@ class App extends React.Component {
     };
   }
 
-  toggleItem = itemId => {
+    
+ toggleItem = (event, itemId) => {
+    event.preventDefault();
     this.setState({
       todo: this.state.todo.map(item => {
         if (itemId === item.id){
-          return {
+           return {
             ...item,
             completed: !item.completed
-          };
-        }
+         }; 
+        } else {
         return item;
-      })
+        }
+       })
     });
   };  
 
@@ -40,6 +43,8 @@ class App extends React.Component {
     this.setState({
       todo: [...this.state.todo, newTodo]
     });
+    localStorage.setItem('addTodo', itemTodo);
+    localStorage.setItem('newTodo', JSON.stringify(newTodo));
   };
 
    todoDone = () => {
