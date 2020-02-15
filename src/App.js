@@ -16,6 +16,10 @@ class App extends React.Component {
     };
   }
 
+componentDidMount() {
+  localStorage.setItem('todo', JSON.stringify(this.state));
+}
+
     
  toggleItem = (event, itemId) => {
     event.preventDefault();
